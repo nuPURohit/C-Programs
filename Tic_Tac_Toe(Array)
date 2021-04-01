@@ -1,0 +1,151 @@
+#include<stdio.h>
+main()
+{
+	int a[]={-1,-1,-1,-1,-1,-1,-1,-1,-1},turn=1,pos;
+	char X,O,name1,name2;
+	
+	printf("\nEnter Player1's name: ");
+	scanf("%c",&name1);
+	fflush(stdin);
+	printf("\nEnter Player2's name: ");
+	scanf("%c",&name2);
+	
+	
+	while(turn<=9)
+	{
+		if(turn%2!=0)
+		{
+			printf("\n%c's turn;position=> ",name1);
+			scanf("%d",&pos);
+			a[pos-1]=1;
+		}
+		else
+		{
+			printf("\n%c's turn;position=> ",name2);
+			scanf("%d",&pos);
+			a[pos-1]=0;
+		}
+	
+		
+		
+		if(a[0]==a[1] && a[1]==a[2])
+		{
+			if(a[0]=='X')
+			{
+				printf("\nPlayer1 wins");
+				turn=10;
+			}
+			else if(a[0]=='O')
+			{
+				printf("\nPlayer2 wins");
+				turn=10;
+			}		
+		}
+		if(a[3]==a[4] && a[4]==a[5])
+		{
+			if(a[3]=='X')
+			{
+				printf("\nPlayer1 wins");
+				turn=10;
+			}
+			else if(a[3]=='O')
+			{
+				printf("\nPlayer2 wins");
+				turn=10;
+			}		
+		}
+		if(a[6]==a[7] && a[7]==a[8])
+		{
+			if(a[6]=='X')
+			{
+				printf("\nPlayer1 wins");
+				turn=10;
+			}
+			else if(a[6]=='O')
+			{
+				printf("\nPlayer2 wins");
+				turn=10;
+			}		
+		}
+		if(a[0]==a[3] && a[3]==a[6])
+		{
+			if(a[0]=='X')
+			{
+				printf("\nPlayer1 wins");
+				turn=10;
+			}
+			else if(a[0]=='O')
+			{
+				printf("\nPlayer2 wins");
+				turn=10;
+			}		
+		}
+		if(a[1]==a[4] && a[4]==a[7])
+		{
+			if(a[1]=='X')
+			{
+				printf("\nPlayer1 wins");
+				turn=10;
+			}
+			else if(a[1]=='O')
+			{
+				printf("\nPlayer2 wins");
+				turn=10;
+			}		
+		}
+		if(a[2]==a[5] && a[5]==a[8])
+		{
+			if(a[2]=='X')
+			{
+				printf("\nPlayer1 wins");
+				turn=10;
+			}
+			else if(a[2]=='O')
+			{
+				printf("\nPlayer2 wins");
+				turn=10;
+			}		
+		}
+		
+		if(a[0]==a[4] && a[4]==a[8])
+		{
+			if(a[0]=='X')
+			{
+				printf("\nPlayer1 wins");
+				turn=10;
+			}
+			else if(a[0]=='O')
+			{
+				printf("\nPlayer2 wins");
+				turn=10;
+			}		
+		}
+		if(a[2]==a[4] && a[4]==a[6])
+		{
+			if(a[2]=='X')
+			{
+				printf("\nPlayer1 wins");
+				turn=10;
+			}
+			else if(a[2]=='O')
+			{
+				printf("\nPlayer2 wins");
+				turn=10;
+			}		
+		}
+		
+		a[0]==-1? printf(" - ") : a[0] ==1? printf(" X ") : printf(" O ");
+		a[1]==-1? printf(" - ") : a[1] ==1? printf(" X ") : printf(" O ");
+		a[2]==-1? printf(" - ") : a[2] ==1? printf(" X ") : printf(" O ");
+		printf("\n");
+		a[3]==-1? printf(" - ") : a[3] ==1? printf(" X ") : printf(" O ");
+		a[4]==-1? printf(" - ") : a[4] ==1? printf(" X ") : printf(" O ");
+		a[5]==-1? printf(" - ") : a[5] ==1? printf(" X ") : printf(" O ");
+		printf("\n");
+		a[6]==-1? printf(" - ") : a[6] ==1? printf(" X ") : printf(" O ");
+		a[7]==-1? printf(" - ") : a[7] ==1? printf(" X ") : printf(" O ");
+		a[8]==-1? printf(" - ") : a[8] ==1? printf(" x ") : printf(" O ");
+					
+		turn++;
+	}
+}
